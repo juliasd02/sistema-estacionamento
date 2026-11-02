@@ -1,4 +1,4 @@
-﻿using DesafioFundamentos.Models;
+using DesafioFundamentos.Models;
 
 // Coloca o encoding para UTF8 para exibir acentuação
 Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -22,7 +22,15 @@ bool exibirMenu = true;
 // Realiza o loop do menu
 while (exibirMenu)
 {
-    Console.Clear();
+    try
+    {
+        Console.Clear();
+    }
+    catch (IOException)
+    {
+        // Tratamento para quando o console não suporta Clear (ex: execução redirecionada)
+    }
+
     Console.WriteLine("Digite a sua opção:");
     Console.WriteLine("1 - Cadastrar veículo");
     Console.WriteLine("2 - Remover veículo");
